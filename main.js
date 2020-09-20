@@ -56,15 +56,39 @@ this.currentOperand = ''
     this.previousOperand = ''
  }
 
+getDisplayNumber(number) {
+    const stringNumber = number.toString()
+    const integerDigits = parseFloat(stringNumber.split('.')[0])
+    const decimalDigits = stringNumber.split('.')[1]
+    let intergerDisplay
+    if (isNan(integerDigits)){
+        integerDisplay = ''
+    } else {
+        integerDisplay = interDigits.toLocaleString('en',) {
+        maximumFractionDigits: 0})
+    }
+    if (deecimalDigits != null) {
+        return '${integerDisplay}'.${decimalDigits}
+    } else {
+        return integerDisplay
+    }
+    }
+    // const floatNumber = parseFloat(number)
+    // if (isNan(floatNumber)) return ''
+    // return floatNumber.tolocaleString('en')
+}
+
  updateDisplay () {
-this.currentOperandandTextElement.innerText = this.currentOperand
+this.currentOperandandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
 if(this.operation ! = null) {
     this.previousOperandTextElement.innerText = 
-    '${this.previousOperand}'
+    '${this.getDisplayNumber(this.previousOperand)} ${this.operation}'
+} else {
+    this.previousOperandTextElement.innerText = ''
+    }
+  }
 }
-this.previousOperandandTextElement.innerText = this.previousOperand
- }
- 
+
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButtons = document.querySelector('[data-equals]')
