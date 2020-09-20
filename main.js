@@ -1,28 +1,29 @@
 class Calculator {
-    constructor (previousOperandTextElement, currentOperandTextElement){
-        this.previousOperandTextElement = previousOperandTextElement
-        this.currentOperandTextElement = currentOperantTextElement
-        this.clear()
+    constructor(previousOperandTextElement, currentOperandTextElement){
+        this.previousOperandTextElement = previousOperandTextElement;
+        this.currentOperandTextElement = currentOperandTextElement;
+        this.readyToReset = false;
+        this.clear();
     }
 
 clear() {
-this.currentOperand = ''
-this.previousOperand = ''
-this.operation = undefined 
+this.currentOperand = " ";
+this.previousOperand = " ";
+this.operation = undefined; 
 }
 
 delete() {
-    this.currentOperand = this.currentOperand.toString().slice(0, -1)
+    this.currentOperand = this.currentOperand.toString().slice(0, -1);
 }
 
 appendNumber(number) {
-    if (number === '.' && this.currentOperand.includes('.'))return 
-this.currentOperand = this.currentOperand.toString() + number.toString()
+    if (number === "." && this.currentOperand.includes("."))return; 
+this.currentOperand = this.currentOperand.toString() + number.toString();
 }
 
 chooseOperation(operation) {
-if(this.currentOperand === '') return
-if(this.previousOperand !== '') {
+if(this.currentOperand === '') return;
+if(this.currentOperand !== '' &&) {
     this.compute()
 }
 this.operation = operation
