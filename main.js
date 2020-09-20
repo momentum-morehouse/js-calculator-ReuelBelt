@@ -1,4 +1,4 @@
-class Calculator [
+class Calculator {
     constructor (previousOperandTextElement, currentOperandTextElement){
         this.previousOperandTextElement = previousOperandTextElement
         this.currentOperandTextElement = currentOperantTextElement
@@ -72,13 +72,12 @@ getDisplayNumber(number) {
     } else {
         return integerDisplay
     }
-    }
     // const floatNumber = parseFloat(number)
     // if (isNan(floatNumber)) return ''
     // return floatNumber.tolocaleString('en')
 }
 
- updateDisplay () {
+ updateDisplay() {
 this.currentOperandandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
 if(this.operation ! = null) {
     this.previousOperandTextElement.innerText = 
@@ -87,7 +86,6 @@ if(this.operation ! = null) {
     this.previousOperandTextElement.innerText = ''
     }
   }
-}
 
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
