@@ -58,9 +58,9 @@ this.currentOperand = " ";
  }
 
  updateDisplay() {
-    this.currentOperandandTextElement.innerText = this.currentOperand; 
+    this.currentOperandandTextElement.textContent = this.currentOperand; 
     if(this.operation ! = null) {
-        this.previousOperandTextElement.innerText = 
+        this.previousOperandTextElement.textContent = 
         '${this.previousOperand} ${this.operation}';
     } else {
         this.previousOperandTextElement.innerText = " ";
